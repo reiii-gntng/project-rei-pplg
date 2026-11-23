@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ridwan Rattan Craft — Pengeksport Kraf Rotan Cirebon</title>
+  <meta name="description" content="Pengeluar dan pengeksport kraf rotan asli Cirebon. Semak status stok, varian, jumlah harga, kos penghantaran dan anggaran tarikh tiba terus di laman web ini.">
+  <style>
+/* ===== Ridwan Rattan Craft — style.css ===== */
+:root {
+  --brown: #7a4b22;
+  --brown-d: #5a3716;
+  --sand: #f6efe3;
+  --cream: #fffaf2;
+  --green: #2f5d46;
+  --green-l: #e3efe8;
+  --text: #2b2118;
+  --muted: #6f6355;
+  --line: #e6dac6;
+  --warn: #b7791f;
+  --danger: #b3382c;
+  --radius: 14px;
+  --shadow: 0 6px 20px rgba(90, 55, 22, .10);
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Segoe UI', system-ui, -apple-system, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: var(--cream);
+  line-height: 1.65;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--brown); }
+h1, h2, h3 { line-height: 1.25; color: var(--brown-d); }
+h1 { font-size: clamp(1.9rem, 4.5vw, 3rem); }
+h2 { font-size: clamp(1.5rem, 3vw, 2.1rem); margin-bottom: .6rem; }
+h3 { font-size: 1.15rem; margin-bottom: .35rem; }
+p { color: var(--muted); }
+.container { width: min(1120px, 92%); margin: 0 auto; }
+section { padding: 64px 0; }
+.section-sand { background: var(--sand); }
+.section-head { max-width: 680px; margin-bottom: 36px; }
+.eyebrow { text-transform: uppercase; letter-spacing: .12em; font-size: .78rem; font-weight: 700; color: var(--green); margin-bottom: .5rem; display: block; }
+
+/* Header */
+.site-header { position: sticky; top: 0; z-index: 50; background: rgba(255, 250, 242, .95); backdrop-filter: blur(8px); border-bottom: 1px solid var(--line); }
+.nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+.brand { display: flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 800; color: var(--brown-d); font-size: 1.1rem; }
+.brand-logo { width: 38px; height: 38px; border-radius: 10px; background: var(--brown); color: #fff; display: grid; place-items: center; font-size: 1.2rem; }
+.nav-links { display: flex; gap: 6px; list-style: none; align-items: center; }
+.nav-links a { text-decoration: none; padding: 8px 14px; border-radius: 999px; color: var(--text); font-weight: 600; font-size: .95rem; }
+.nav-links a:hover { background: var(--sand); }
+.nav-links a.active { background: var(--brown); color: #fff; }
+.menu-btn { display: none; background: none; border: 1px solid var(--line); border-radius: 10px; font-size: 1.4rem; padding: 4px 12px; cursor: pointer; }
+
+/* Buttons */
+.btn { display: inline-block; padding: 12px 22px; border-radius: 999px; font-weight: 700; text-decoration: none; border: 2px solid transparent; cursor: pointer; font-size: 1rem; transition: transform .15s, background .15s; font-family: inherit; }
+.btn:hover { transform: translateY(-2px); }
+.btn-primary { background: var(--brown); color: #fff; }
+.btn-primary:hover { background: var(--brown-d); }
+.btn-green { background: var(--green); color: #fff; }
+.btn-outline { border-color: var(--brown); color: var(--brown); background: transparent; }
+.btn-sm { padding: 8px 16px; font-size: .9rem; }
+.btn-block { display: block; width: 100%; text-align: center; }
+
+/* Hero */
+.hero { background: linear-gradient(135deg, #f2e3c9 0%, #fffaf2 60%); padding: 80px 0 70px; position: relative; overflow: hidden; }
+.hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; gap: 40px; align-items: center; }
+.hero p.lead { font-size: 1.15rem; margin: 16px 0 26px; max-width: 560px; }
+.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero-art { background: var(--brown); border-radius: 28px; aspect-ratio: 1 / 1; display: grid; place-items: center; font-size: clamp(5rem, 14vw, 9rem); box-shadow: var(--shadow); position: relative; overflow: hidden;
+  background-image: repeating-linear-gradient(45deg, rgba(255,255,255,.07) 0 10px, transparent 10px 20px), repeating-linear-gradient(-45deg, rgba(0,0,0,.07) 0 10px, transparent 10px 20px); }
+.hero-art small { position: absolute; bottom: 18px; left: 16px; right: 16px; text-align: center; color: #fff; font-size: .92rem; font-weight: 600; text-shadow: 0 2px 8px rgba(0,0,0,.85); z-index: 2; background: rgba(0,0,0,.35); padding: 4px 10px; border-radius: 999px; }
+.stats { display: flex; gap: 28px; margin-top: 34px; flex-wrap: wrap; }
+.stats div strong { display: block; font-size: 1.6rem; color: var(--green); }
+.stats div span { font-size: .85rem; color: var(--muted); }
+
+/* Page header */
+.page-head { background: var(--sand); padding: 46px 0 36px; border-bottom: 1px solid var(--line); }
+
+/* Grid & cards */
+.grid { display: grid; gap: 22px; }
+.grid-3 { grid-template-columns: repeat(3, 1fr); }
+.grid-4 { grid-template-columns: repeat(4, 1fr); }
+.card { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 24px; box-shadow: var(--shadow); }
+.icon-box { width: 52px; height: 52px; border-radius: 14px; background: var(--green-l); display: grid; place-items: center; font-size: 1.6rem; margin-bottom: 14px; }
+.qa-q { font-weight: 700; color: var(--brown-d); font-size: .85rem; margin-bottom: 4px; }
+
+/* Steps */
+.steps { counter-reset: step; display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.step { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 20px 16px; text-align: center; }
+.step::before { counter-increment: step; content: counter(step); display: grid; place-items: center; width: 38px; height: 38px; margin: 0 auto 10px; border-radius: 50%; background: var(--brown); color: #fff; font-weight: 800; }
+.step h3 { font-size: 1rem; }
+.step p { font-size: .88rem; }
+
+/* Product cards */
+.toolbar { display: flex; gap: 12px; flex-wrap: wrap; align-items: center; margin-bottom: 26px; }
+.chip { border: 1px solid var(--line); background: #fff; padding: 8px 16px; border-radius: 999px; cursor: pointer; font-weight: 600; font-family: inherit; font-size: .92rem; color: var(--text); }
+.chip.active { background: var(--green); color: #fff; border-color: var(--green); }
+.search { flex: 1; min-width: 200px; padding: 10px 16px; border: 1px solid var(--line); border-radius: 999px; font-size: 1rem; font-family: inherit; }
+.product { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+.product-img { height: 210px; overflow: hidden; background: linear-gradient(135deg, #e9d3ae, #c89b62); }
+.product-img img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s; }
+.product:hover .product-img img { transform: scale(1.05); }
+.product-body { padding: 20px; display: flex; flex-direction: column; gap: 10px; flex: 1; }
+.product-cat { font-size: .75rem; text-transform: uppercase; letter-spacing: .1em; color: var(--green); font-weight: 700; }
+.product-desc { font-size: .92rem; }
+.price { font-size: 1.35rem; font-weight: 800; color: var(--brown-d); }
+.meta { font-size: .82rem; color: var(--muted); }
+.badge { display: inline-block; padding: 3px 10px; border-radius: 999px; font-size: .78rem; font-weight: 700; }
+.badge.ok { background: #dff1e6; color: #1e6a3f; }
+.badge.warn { background: #fbefd2; color: #8a5a00; }
+.badge.out { background: #f8dcd8; color: #962d22; }
+.product .spacer { flex: 1; }
+
+/* Forms */
+label { display: block; font-weight: 700; font-size: .9rem; margin-bottom: 6px; color: var(--brown-d); }
+select, input[type=number], input[type=text], textarea {
+  width: 100%; padding: 11px 14px; border: 1px solid var(--line); border-radius: 10px; font-size: 1rem; font-family: inherit; background: #fff; color: var(--text);
+}
+select:focus, input:focus, textarea:focus { outline: 2px solid var(--green); border-color: var(--green); }
+.form-row { margin-bottom: 16px; }
+.form-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.hint { font-size: .84rem; color: var(--muted); margin-top: 6px; }
+.msg-error { color: var(--danger); font-size: .88rem; margin-top: 8px; font-weight: 600; }
+
+/* Calculator */
+.calc-layout { display: grid; grid-template-columns: 1.1fr .9fr; gap: 26px; align-items: start; }
+.calc-layout .card + .card { margin-top: 22px; }
+table { width: 100%; border-collapse: collapse; font-size: .92rem; }
+th, td { padding: 10px 8px; text-align: left; border-bottom: 1px solid var(--line); vertical-align: top; }
+th { font-size: .78rem; text-transform: uppercase; letter-spacing: .05em; color: var(--muted); }
+td input[type=number] { width: 76px; padding: 6px 8px; }
+.remove { background: none; border: none; color: var(--danger); cursor: pointer; font-size: 1.1rem; }
+.empty { text-align: center; padding: 26px 10px; color: var(--muted); }
+.result { position: sticky; top: 88px; }
+.result-row { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px dashed var(--line); font-size: .95rem; }
+.result-row.total { border-bottom: none; font-size: 1.3rem; font-weight: 800; color: var(--brown-d); padding-top: 14px; }
+.status-box { border-radius: 12px; padding: 14px 16px; margin: 14px 0; font-size: .92rem; }
+.status-box.ok { background: #dff1e6; color: #1e5a38; }
+.status-box.warn { background: #fbefd2; color: #7a4f00; }
+.status-box strong { display: block; margin-bottom: 2px; }
+.eta { background: var(--green); color: #fff; border-radius: 12px; padding: 14px 16px; margin: 14px 0; }
+.eta small { display: block; opacity: .88; }
+.eta strong { font-size: 1.1rem; }
+
+/* FAQ */
+.faq-list { max-width: 820px; }
+.faq-item { background: #fff; border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 12px; overflow: hidden; }
+.faq-q { width: 100%; text-align: left; background: none; border: none; padding: 18px 22px; font-size: 1.02rem; font-weight: 700; color: var(--brown-d); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 12px; font-family: inherit; }
+.faq-q::after { content: '+'; font-size: 1.5rem; color: var(--green); transition: transform .2s; }
+.faq-item.open .faq-q::after { transform: rotate(45deg); }
+.faq-a { max-height: 0; overflow: hidden; transition: max-height .3s ease; padding: 0 22px; }
+.faq-item.open .faq-a { padding-bottom: 18px; }
+
+/* CTA */
+.cta { background: var(--brown-d); color: #fff; text-align: center; border-radius: 24px; padding: 54px 24px; }
+.cta h2 { color: #fff; }
+.cta p { color: #ecd9bd; margin-bottom: 22px; }
+.cta .btn-primary { background: #fff; color: var(--brown-d); }
+
+/* Contact */
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 26px; }
+.contact-list { list-style: none; }
+.contact-list li { display: flex; gap: 14px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+.contact-list span.ic { font-size: 1.4rem; }
+
+/* Footer */
+.site-footer { background: #2b1d10; color: #d9c8ad; padding: 44px 0 24px; margin-top: 40px; }
+.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 30px; }
+.site-footer h3 { color: #fff; font-size: 1rem; }
+.site-footer a { color: #d9c8ad; text-decoration: none; display: block; padding: 3px 0; }
+.site-footer a:hover { color: #fff; }
+.site-footer p { color: #b9a68a; font-size: .92rem; }
+.copy { border-top: 1px solid #4a3a28; margin-top: 28px; padding-top: 16px; font-size: .85rem; text-align: center; color: #a8967b; }
+.wa-float { position: fixed; right: 18px; bottom: 18px; background: #25a244; color: #fff; padding: 12px 18px; border-radius: 999px; font-weight: 700; text-decoration: none; box-shadow: 0 6px 18px rgba(0,0,0,.25); z-index: 60; }
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero-grid, .calc-layout, .contact-grid { grid-template-columns: 1fr; }
+  .grid-3, .grid-4 { grid-template-columns: 1fr 1fr; }
+  .steps { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .result { position: static; }
+  .hero-art { max-width: 340px; }
+}
+@media (max-width: 720px) {
+  .menu-btn { display: block; }
+  .nav-links { display: none; position: absolute; top: 68px; left: 0; right: 0; flex-direction: column; background: var(--cream); padding: 12px 4%; border-bottom: 1px solid var(--line); align-items: stretch; }
+  .nav-links.open { display: flex; }
+  .nav-links a { display: block; }
+}
+@media (max-width: 560px) {
+  .grid-3, .grid-4, .steps, .form-2 { grid-template-columns: 1fr; }
+  section { padding: 46px 0; }
+  .wa-float { padding: 10px 14px; font-size: .9rem; }
+}
+/* Single page enhancements */
+.page[hidden] { display: none; }
+.hero-photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; border-radius: 28px; }
+.img-fallback { height: 100%; display: grid; place-items: center; font-size: 4.5rem; }
+  </style>
+</head>
+<body data-page="beranda">
+  <div id="site-header"></div>
+  <main>
+    <!-- HALAMAN: UTAMA / BERANDA -->
+    <div class="page" data-page="beranda" hidden>
+      <!-- HERO -->
+      <section class="hero">
+        <div class="container hero-grid">
+          <div>
+            <span class="eyebrow">Pengeksport Kraf Rotan · Cirebon, Jawa Barat</span>
+            <h1>Kraf rotan asli Cirebon — semak harga, stok & kos penghantaran secara terus.</h1>
+            <p class="lead">Tidak perlu menunggu maklum balas sembang. Semak baki stok, pilih varian, kira jumlah harga, kos penghantaran dan anggaran tarikh barangan sampai terus di laman web ini.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="#/kalkulator">Kira Tempahan Saya</a>
+              <a class="btn btn-outline" href="#/produk">Lihat Katalog Produk</a>
+            </div>
+            <div class="stats">
+              <div><strong>7+</strong><span>Koleksi Pilihan</span></div>
+              <div><strong>11</strong><span>Destinasi Penghantaran</span></div>
+              <div><strong>24/7</strong><span>Semakan Kos Segera</span></div>
+            </div>
+          </div>
+          <div class="hero-art" aria-hidden="true">
+            <img class="hero-photo" src="hero.jpg" alt="Kraf Rotan Cirebon" onerror="this.remove()">
+            🪑
+            <small>Anyaman rotan asli, dihasilkan oleh tukang kraf mahir Cirebon</small>
+          </div>
+        </div>
+      </section>
+
+      <!-- MASALAH & PENYELESAIAN -->
+      <section>
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Kemudahan Untuk Pelanggan</span>
+            <h2>Pertanyaan lazim kini dijawab secara automatik</h2>
+            <p>Sebelum ini, pelanggan kerap bertanyakan perkara yang sama melalui aplikasi sembang. Laman web ini menjawab segala persoalan anda secara terperinci dan serta-merta, supaya kami dapat menumpukan sepenuhnya kepada kualiti pembuatan barangan tempahan anda.</p>
+          </div>
+          <div class="grid grid-3">
+            <article class="card">
+              <div class="icon-box">📦</div>
+              <p class="qa-q">“Barangan ini masih ada stok ke?”</p>
+              <h3>Status stok setiap varian</h3>
+              <p>Setiap varian dipaparkan dengan label <b>Sedia Ada</b>, <b>Terhad</b> atau <b>Habis</b>. Jika kuantiti tempahan melebihi stok, sistem akan memaklumkan dan menjadualkan tempoh pembuatan secara automatik.</p>
+            </article>
+            <article class="card">
+              <div class="icon-box">🎨</div>
+              <p class="qa-q">“Apakah pilihan varian yang ditawarkan?”</p>
+              <h3>Katalog pilihan lengkap</h3>
+              <p>Pilihan warna dan saiz bagi setiap barangan dinyatakan dengan jelas berserta harga, anggaran berat dan had pesanan minimum (MOQ). Boleh ditapis dan dicari mengikut kategori.</p>
+            </article>
+            <article class="card">
+              <div class="icon-box">🧮</div>
+              <p class="qa-q">“Berapakah jumlah keseluruhan harganya?”</p>
+              <h3>Kalkulator tempahan segera</h3>
+              <p>Pilih pelbagai barangan sekali gus dan sistem akan mengira jumlah kos secara automatik, termasuk kos pembungkusan peti kayu untuk penghantaran eksport luar negara.</p>
+            </article>
+            <article class="card">
+              <div class="icon-box">🚚</div>
+              <p class="qa-q">“Berapakah kadar kos penghantaran?”</p>
+              <h3>Kadar penghantaran telus</h3>
+              <p>Dikira mengikut jumlah berat barangan dan kadar destinasi, sama ada penghantaran domestik mahupun eksport antarabangsa (Singapura, Malaysia, dll) melalui laluan laut atau udara.</p>
+            </article>
+            <article class="card">
+              <div class="icon-box">📅</div>
+              <p class="qa-q">“Bila barangan dijangka sampai?”</p>
+              <h3>Anggaran tarikh penerimaan</h3>
+              <p>Masa penyediaan ditambah tempoh perjalanan kargo, dipaparkan sebagai julat tarikh yang jelas supaya anda dapat membuat perancangan dengan tepat.</p>
+            </article>
+            <article class="card">
+              <div class="icon-box">💬</div>
+              <p class="qa-q">“Bagaimanakah cara untuk membuat pesanan?”</p>
+              <h3>Pesanan terus melalui WhatsApp</h3>
+              <p>Ringkasan perincian tempahan disusun secara automatik dan dihantar terus ke WhatsApp kami. Tinggal sahkan sahaja tanpa perlu mengulang soal jawab dari mula.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- PRODUK PILIHAN -->
+      <section class="section-sand">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Koleksi Terpilih</span>
+            <h2>Pilihan paling laris minggu ini</h2>
+            <p>Cuba tukar pilihan varian pada kad produk untuk melihat perubahan harga dan ketersediaan stok terkini.</p>
+          </div>
+          <div class="grid grid-3" id="featured"></div>
+          <p style="margin-top:26px"><a class="btn btn-outline" href="#/produk">Lihat semua koleksi produk →</a></p>
+        </div>
+      </section>
+
+      <!-- ALIRAN TEMPAHAN -->
+      <section>
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">Proses Tempahan</span>
+            <h2>Langkah mudah dari semakan harga sehingga barang tiba</h2>
+          </div>
+          <div class="steps">
+            <div class="step"><h3>1. Pilih Produk</h3><p>Semak katalog dan pastikan ketersediaan stok bagi produk pilihan anda.</p></div>
+            <div class="step"><h3>2. Kira Kos</h3><p>Gunakan kalkulator untuk mengira subjumlah dan caj penghantaran.</p></div>
+            <div class="step"><h3>3. Hantar Pesanan</h3><p>Ringkasan tempahan disusun automatik untuk dihantar ke WhatsApp.</p></div>
+            <div class="step"><h3>4. Pengesahan & Deposit</h3><p>Pihak kami mengesahkan pesanan dan menerima deposit 50%.</p></div>
+            <div class="step"><h3>5. Bungkus & Pos</h3><p>Barangan dibungkus kemas dengan selamat lalu dihantar ke destinasi anda.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section style="padding-top:0">
+        <div class="container">
+          <div class="cta">
+            <h2>Bersedia untuk menyerikan ruang kediaman atau projek anda dengan rotan asli?</h2>
+            <p>Kira anggaran kos tempahan anda sekarang — pantas, percuma dan tanpa sebarang pendaftaran.</p>
+            <a class="btn btn-primary" href="#/kalkulator">Mula Kira Tempahan</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- HALAMAN: KATALOG PRODUK -->
+    <div class="page" data-page="produk" hidden>
+      <section class="page-head">
+        <div class="container">
+          <span class="eyebrow">Katalog Barangan</span>
+          <h1>Koleksi Produk Rotan</h1>
+          <p>Pilih varian untuk melihat harga dan status stok terkini. Klik “Kira Tempahan” untuk terus membawanya ke kalkulator kos.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="toolbar">
+            <div id="filters" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+            <input type="text" id="search" class="search" placeholder="Cari barangan, contohnya “kerusi” atau “bakul”…" aria-label="Cari produk">
+          </div>
+          <div class="grid grid-3" id="product-grid"></div>
+
+          <div class="card" style="margin-top:36px">
+            <h3>Panduan Status Stok</h3>
+            <p style="margin-top:8px">
+              <span class="badge ok">Sedia Ada</span> stok mencukupi, sedia dihantar dalam 1–2 hari bekerja. &nbsp;
+              <span class="badge warn">Terhad</span> baki stok tinggal sedikit, disarankan membuat tempahan segera. &nbsp;
+              <span class="badge out">Habis</span> boleh membuat pra-pesanan dengan tempoh pembuatan 14–21 hari.
+            </p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- HALAMAN: KALKULATOR -->
+    <div class="page" data-page="kalkulator" hidden>
+      <section class="page-head">
+        <div class="container">
+          <span class="eyebrow">Kalkulator Pesanan</span>
+          <h1>Semakan Harga, Kos Penghantaran & Anggaran Tiba</h1>
+          <p>Susun barangan pilihan anda, tentukan lokasi destinasi dan ketahui jumlah keseluruhan kos dengan serta-merta.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="container calc-layout">
+          <div>
+            <!-- 1. Tambah produk -->
+            <div class="card">
+              <h3>1. Pilih barangan</h3>
+              <div class="form-row" style="margin-top:12px">
+                <label for="c-produk">Pilihan Produk</label>
+                <select id="c-produk"></select>
+              </div>
+              <div class="form-row">
+                <label for="c-varian">Pilihan Varian</label>
+                <select id="c-varian"></select>
+                <p class="hint" id="c-info"></p>
+              </div>
+              <div class="form-row">
+                <label for="c-qty">Kuantiti (unit)</label>
+                <input type="number" id="c-qty" min="1" value="1">
+                <p class="msg-error" id="add-msg"></p>
+              </div>
+              <button class="btn btn-primary" id="btn-add" type="button">+ Tambah ke Senarai Tempahan</button>
+            </div>
+
+            <!-- 2. Senarai tempahan -->
+            <div class="card">
+              <h3>2. Senarai barangan tempahan</h3>
+              <div id="items" style="margin-top:8px"></div>
+            </div>
+
+            <!-- 3. Destinasi -->
+            <div class="card">
+              <h3>3. Lokasi & kaedah penghantaran</h3>
+              <div class="form-2" style="margin-top:12px">
+                <div class="form-row">
+                  <label for="c-tujuan">Destinasi Penghantaran</label>
+                  <select id="c-tujuan"></select>
+                </div>
+                <div class="form-row">
+                  <label for="c-metode">Kaedah Penghantaran</label>
+                  <select id="c-metode"></select>
+                </div>
+              </div>
+              <p class="hint">Kadar caj dikira per kg berdasarkan jumlah berat keseluruhan pesanan. Penghantaran eksport luar negara menggunakan pembungkusan peti kayu kukuh (+5% daripada nilai barangan).</p>
+            </div>
+          </div>
+
+          <!-- Keputusan -->
+          <aside class="card result" id="result"></aside>
+        </div>
+      </section>
+    </div>
+
+    <!-- HALAMAN: SOALAN LAZIM (FAQ) -->
+    <div class="page" data-page="faq" hidden>
+      <section class="page-head">
+        <div class="container">
+          <span class="eyebrow">Pusat Bantuan</span>
+          <h1>Soalan Lazim (FAQ)</h1>
+          <p>Segala jawapan penting berkaitan perkara yang kerap ditanyakan oleh para pelanggan kami.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="faq-list">
+            <input type="text" id="faq-search" class="search" style="width:100%;margin-bottom:22px" placeholder="Cari soalan, contohnya “penghantaran” atau “kaedah bayaran”…" aria-label="Cari soalan">
+            <div id="faq-list"></div>
+          </div>
+
+          <div class="cta" style="margin-top:44px">
+            <h2>Ada soalan lain yang belum terjawab?</h2>
+            <p>Pasukan kami sentiasa sedia membantu anda secara terus melalui WhatsApp.</p>
+            <a class="btn btn-primary" href="#/kontak">Hubungi Kami Sekarang</a>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- HALAMAN: TENTANG & HUBUNGI KAMI -->
+    <div class="page" data-page="kontak" hidden>
+      <section class="page-head">
+        <div class="container">
+          <span class="eyebrow">Profil & Maklumat Perhubungan</span>
+          <h1>Kenali Kami & Hubungi Kami</h1>
+          <p>Pengeluar kraf rotan asli dari Cirebon yang sedia melayani pesanan pembeli tempatan mahupun pasaran antarabangsa.</p>
+        </div>
+      </section>
+
+      <section>
+        <div class="container">
+          <div class="grid grid-3" style="margin-bottom:44px">
+            <article class="card">
+              <div class="icon-box">🌿</div>
+              <h3>Bahan Asli Bermutu</h3>
+              <p>Rotan pilihan berkualiti tinggi yang diproses dan dianyam kemas oleh tukang kraf tempatan berpengalaman di Cirebon.</p>
+            </article>
+            <article class="card">
+              <div class="icon-box">🌏</div>
+              <h3>Sedia Untuk Eksport</h3>
+              <p>Pembungkusan berlapis, kotak tebal, peti kayu khas serta bantuan penyediaan dokumen eksport lengkap ke luar negara.</p>
+            </article>
+            <article class="card">
+              <div class="icon-box">🤝</div>
+              <h3>Ketelusan Penuh</h3>
+              <p>Status stok, harga, kos penghantaran dan anggaran tarikh sampai boleh disemak sendiri secara telus sebelum membuat keputusan.</p>
+            </article>
+          </div>
+
+          <div class="contact-grid">
+            <div class="card">
+              <h2>Maklumat Perhubungan</h2>
+              <ul class="contact-list">
+                <li><span class="ic">👤</span><div><b>Encik Bowo / Encik Ridwan</b><br><span class="meta">Pemilik & Pengurus Eksport</span></div></li>
+                <li><span class="ic">📍</span><div><b>Alamat Operasi</b><br><span class="meta">Cirebon, Jawa Barat, Indonesia</span></div></li>
+                <li><span class="ic">💬</span><div><b>WhatsApp Rasmi</b><br><span class="meta">+62 896-7406-7198</span></div></li>
+                <li><span class="ic">🕗</span><div><b>Waktu Operasi</b><br><span class="meta">Isnin – Sabtu, 08:00 – 17:00 (WIB)</span></div></li>
+              </ul>
+            </div>
+
+            <div class="card">
+              <h2>Hantar Mesej Pertanyaan</h2>
+              <p style="margin-bottom:16px">Lengkapkan borang di bawah, mesej anda akan dibuka terus di WhatsApp.</p>
+              <form id="contact-form">
+                <div class="form-row"><label for="nama">Nama Penuh</label><input type="text" id="nama" name="nama" required placeholder="Contoh: Ahmad Razak"></div>
+                <div class="form-row"><label for="perusahaan">Nama Syarikat / Kedai (Pilihan)</label><input type="text" id="perusahaan" name="perusahaan" placeholder="Contoh: Butik Impian Rattan"></div>
+                <div class="form-row"><label for="tujuan">Bandar & Negara Destinasi</label><input type="text" id="tujuan" name="tujuan" required placeholder="Contoh: Shah Alam, Selangor, Malaysia"></div>
+                <div class="form-row"><label for="pesan">Mesej / Butiran Pesanan</label><textarea id="pesan" name="pesan" rows="4" required placeholder="Contoh: Salam, saya berminat untuk membuat tempahan 50 unit bakul anyaman saiz sederhana untuk kedai saya…"></textarea></div>
+                <button type="submit" class="btn btn-green btn-block">Hantar ke WhatsApp</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <div id="site-footer"></div>
+
+  <script>
+/* ===== Ridwan Rattan Craft — script.js (Bahasa Melayu / Malaysia) =====
+   Semua data (produk, stok, harga, kadar penghantaran) ada di bahagian DATA di bawah.
+*/
+
+/* ---------- DATA ---------- */
+const WA_NUMBER = '6289674067198'; // Nombor WhatsApp rasmi
+const BUSINESS = 'Ridwan Rattan Craft';
+const PACKING_EKSPORT = 0.05;      // Kos pembungkusan peti kayu eksport = 5% daripada subjumlah
+const PRODUKSI_TAMBAHAN = { min: 14, max: 21 }; // Tempoh hari jika stok perlu pengeluaran tambahan
+const SEDIA_HANTAR = { min: 1, max: 2 };        // Tempoh hari jika stok sedia ada
+
+const PRODUCTS = [
+  {
+    id: 'kursi', nama: 'Kerusi Rotan Anyam', kategori: 'Perabot', emoji: '🪑', minOrder: 2,
+    deskripsi: 'Kerusi anyaman rotan asli dengan kerangka kukuh dan selesa, amat sesuai untuk kafe, resort dan ruang tamu.',
+    varian: [
+      { nama: 'Asli (Natural)', harga: 450000, stok: 40, berat: 6 },
+      { nama: 'Honey Brown', harga: 475000, stok: 25, berat: 6 },
+      { nama: 'Hitam Espresso', harga: 495000, stok: 0, berat: 6 }
+    ]
+  },
+  {
+    id: 'meja', nama: 'Meja Kopi Rotan Bulat', kategori: 'Perabot', emoji: '☕', minOrder: 2,
+    deskripsi: 'Meja kopi bundar dengan kemasan permukaan kaca terbaja (tempered glass) dan kaki rotan melengkung yang anggun.',
+    varian: [
+      { nama: 'Diameter 60 cm', harga: 650000, stok: 18, berat: 12 },
+      { nama: 'Diameter 80 cm', harga: 850000, stok: 10, berat: 18 }
+    ]
+  },
+  {
+    id: 'sofa', nama: 'Sofa Rotan 2 Tempat Duduk', kategori: 'Perabot', emoji: '🛋️', minOrder: 1,
+    deskripsi: 'Sofa dua tempat duduk berkusyen span tebal yang empuk, tersedia dalam dua pilihan warna kerangka rotan.',
+    varian: [
+      { nama: 'Asli (Natural)', harga: 2400000, stok: 6, berat: 25 },
+      { nama: 'Honey Brown', harga: 2550000, stok: 3, berat: 25 }
+    ]
+  },
+  {
+    id: 'rak', nama: 'Rak Paparan Rotan 3 Tingkat', kategori: 'Perabot', emoji: '🗄️', minOrder: 1,
+    deskripsi: 'Rak pameran serba guna untuk butik, ruang tamu atau dapur. Mudah dipasang dan kukuh menampung bebanan.',
+    varian: [
+      { nama: 'Asli (Natural)', harga: 780000, stok: 8, berat: 14 },
+      { nama: 'Hitam', harga: 820000, stok: 0, berat: 14 }
+    ]
+  },
+  {
+    id: 'keranjang', nama: 'Bakul Anyaman Serba Guna', kategori: 'Hiasan Dalaman', emoji: '🧺', minOrder: 10,
+    deskripsi: 'Bakul simpanan anyaman rotan halus yang kemas, pilihan popular bagi butik hiasan rumah, hotel dan cenderahati.',
+    varian: [
+      { nama: 'Kecil (25 cm)', harga: 85000, stok: 200, berat: 0.5 },
+      { nama: 'Sederhana (35 cm)', harga: 125000, stok: 150, berat: 0.9 },
+      { nama: 'Besar (45 cm)', harga: 185000, stok: 60, berat: 1.5 }
+    ]
+  },
+  {
+    id: 'lampu', nama: 'Lampu Gantung Rotan', kategori: 'Hiasan Dalaman', emoji: '💡', minOrder: 4,
+    deskripsi: 'Kelongsong penutup lampu gantung anyaman rotan dengan corak pencahayaan hangat. Soket lampu E27 tidak disertakan.',
+    varian: [
+      { nama: 'Diameter 40 cm', harga: 210000, stok: 35, berat: 1.2 },
+      { nama: 'Diameter 60 cm', harga: 320000, stok: 12, berat: 2 }
+    ]
+  },
+  {
+    id: 'nampan', nama: 'Dulang Rotan', kategori: 'Aksesori Meja', emoji: '🍽️', minOrder: 12,
+    deskripsi: 'Dulang hidang anyaman rotan dengan pemegang tepi, amat sesuai untuk kafe, restoran, hotel serta gubahan hamper.',
+    varian: [
+      { nama: 'Bulat', harga: 95000, stok: 120, berat: 0.6 },
+      { nama: 'Segi Empat', harga: 110000, stok: 80, berat: 0.8 }
+    ]
+  }
+];
+
+// tarif = Rupiah per kg, min/max = anggaran hari dalam perjalanan
+const DESTINATIONS = [
+  { id: 'jawa', nama: 'Pulau Jawa', grup: 'Domestik (Indonesia)', ekspor: false, metode: [{ nama: 'Kargo Darat', tarif: 3500, min: 2, max: 4 }] },
+  { id: 'sumatra', nama: 'Sumatera', grup: 'Domestik (Indonesia)', ekspor: false, metode: [{ nama: 'Kargo Darat + Laut', tarif: 6500, min: 4, max: 7 }] },
+  { id: 'bali', nama: 'Bali & Nusa Tenggara', grup: 'Domestik (Indonesia)', ekspor: false, metode: [{ nama: 'Kargo Darat + Laut', tarif: 7000, min: 4, max: 8 }] },
+  { id: 'kalimantan', nama: 'Kalimantan', grup: 'Domestik (Indonesia)', ekspor: false, metode: [{ nama: 'Kargo Laut', tarif: 8000, min: 5, max: 9 }] },
+  { id: 'sulawesi', nama: 'Sulawesi', grup: 'Domestik (Indonesia)', ekspor: false, metode: [{ nama: 'Kargo Laut', tarif: 9000, min: 6, max: 10 }] },
+  { id: 'papua', nama: 'Maluku & Papua', grup: 'Domestik (Indonesia)', ekspor: false, metode: [{ nama: 'Kargo Laut', tarif: 14000, min: 10, max: 20 }] },
+  { id: 'sgmy', nama: 'Malaysia & Singapura', grup: 'Eksport Antarabangsa', ekspor: true, metode: [
+    { nama: 'Laluan Laut (LCL)', tarif: 12000, min: 7, max: 10 }, { nama: 'Laluan Udara (Kargo Udara)', tarif: 45000, min: 3, max: 5 }] },
+  { id: 'aus', nama: 'Australia', grup: 'Eksport Antarabangsa', ekspor: true, metode: [
+    { nama: 'Laluan Laut (LCL)', tarif: 18000, min: 14, max: 21 }, { nama: 'Laluan Udara (Kargo Udara)', tarif: 60000, min: 4, max: 6 }] },
+  { id: 'jpkr', nama: 'Jepun / Korea Selatan', grup: 'Eksport Antarabangsa', ekspor: true, metode: [
+    { nama: 'Laluan Laut (LCL)', tarif: 20000, min: 12, max: 18 }, { nama: 'Laluan Udara (Kargo Udara)', tarif: 65000, min: 4, max: 6 }] },
+  { id: 'eropa', nama: 'Negara-negara Eropah', grup: 'Eksport Antarabangsa', ekspor: true, metode: [
+    { nama: 'Laluan Laut (LCL)', tarif: 25000, min: 28, max: 40 }, { nama: 'Laluan Udara (Kargo Udara)', tarif: 75000, min: 5, max: 8 }] },
+  { id: 'usa', nama: 'Amerika Syarikat & Kanada', grup: 'Eksport Antarabangsa', ekspor: true, metode: [
+    { nama: 'Laluan Laut (LCL)', tarif: 30000, min: 30, max: 45 }, { nama: 'Laluan Udara (Kargo Udara)', tarif: 85000, min: 5, max: 9 }] }
+];
+
+const FAQS = [
+  { q: 'Adakah produk pilihan saya mempunyai stok sedia ada?',
+    a: 'Anda boleh menyemak status terkini terus di bahagian <a href="#/produk">Katalog Produk</a>. Setiap varian dipaparkan dengan status <b>Sedia Ada</b>, <b>Terhad</b> atau <b>Habis</b>. Jika stok kehabisan atau kuantiti tempahan melebihi baki stok, anda tetap boleh membuat pra-tempahan dengan tempoh pembuatan sekitar 14–21 hari bekerja.' },
+  { q: 'Apakah barangan dan pilihan varian yang ditawarkan?',
+    a: 'Kami menyediakan perabot (kerusi, meja kopi, sofa, rak bertingkat), hiasan dalaman (bakul simpanan, penutup lampu gantung) serta aksesori meja (dulang hidang). Setiap produk mempunyai pilihan warna kemasan atau saiz yang berbeza, kesemuanya tersenarai lengkap dalam katalog kami.' },
+  { q: 'Bagaimanakah cara mengira jumlah harga tempahan?',
+    a: 'Sila buka halaman <a href="#/kalkulator">Semak Harga & Penghantaran</a>, pilih produk, varian dan kuantiti yang diingini. Jumlah subjumlah barangan akan dikira secara automatik. Anda boleh menambah beberapa produk berbeza ke dalam satu senarai tempahan yang sama.' },
+  { q: 'Berapakah kadar kos penghantaran?',
+    a: 'Kos penghantaran dikira berdasarkan jumlah berat kasar pesanan (dibundarkan ke atas bagi setiap kg) didarab dengan kadar destinasi. Pilih destinasi dan kaedah penghantaran di kalkulator untuk melihat kos serta-merta. Bagi pesanan eksport luar negara, caj pembungkusan peti kayu sebanyak 5% daripada nilai barangan akan ditambah untuk menjamin keselamatan maksimum.' },
+  { q: 'Berapa lamakah anggaran masa barangan sampai ke destinasi?',
+    a: 'Anggaran masa = tempoh penyediaan barangan + tempoh perjalanan kargo. Barangan stok sedia ada boleh dihantar dalam tempoh 1–2 hari bekerja. Kalkulator kami akan memaparkan julat tarikh penerimaan mengikut destinasi dan kaedah kargo yang dipilih.' },
+  { q: 'Adakah terdapat had pesanan minimum (MOQ)?',
+    a: 'Ya, had pesanan minimum berbeza mengikut kategori barangan. Perabot bersaiz besar bermula serendah 1–2 unit sahaja, manakala barangan kraf seperti bakul dan dulang bermula dari 10–12 unit. Syarat kuantiti minimum tertera pada setiap kad produk.' },
+  { q: 'Bagaimanakah kaedah dan urusan pembayaran?',
+    a: 'Bagi stok sedia ada: pembayaran deposit 50% selepas pengesahan pesanan, dan baki dijelaskan sebelum barangan dihantar. Bagi barangan yang memerlukan tempoh pembuatan: deposit 50% untuk memulakan pengeluaran, dan baki diselesaikan selepas barangan siap (gambar & video siap dihantar). Pembayaran diterima melalui pindahan bank (pembeli antarabangsa boleh menggunakan Telegraphic Transfer / T/T).' },
+  { q: 'Bolehkah saya membuat tempahan rekaan khas (warna, saiz atau logo jenama)?',
+    a: 'Boleh, kami amat mengalu-alukan tempahan khas (custom order) untuk kuantiti komersial. Sila hubungi kami melalui WhatsApp berserta lakaran, ukuran atau gambar rujukan anda untuk sebut harga rasmi dan anggaran masa penghasilan.' },
+  { q: 'Apakah dokumen eksport yang disediakan untuk pembeli antarabangsa?',
+    a: 'Kami membantu menyediakan dokumen eksport lengkap seperti senarai pembungkusan (Packing List), Invois Komersial (Commercial Invoice), Surat Muatan (Bill of Lading) serta Sijil Fumigasi (Fumigation Certificate) mengikut keperluan pelepasan kastam negara destinasi anda.' },
+  { q: 'Bagaimanakah jika barangan mengalami kerosakan semasa penghantaran?',
+    a: 'Setiap barangan dibungkus rapi dengan lapisan pelindung tebal (bubble wrap, kadbod beralun berkualiti dan peti kayu kukuh untuk eksport). Sekiranya berlaku sebarang kerosakan semasa penerimaan, sila hantar gambar serta video buka bungkusan (unboxing) dalam tempoh 2 hari dari tarikh penerimaan untuk tindakan penggantian atau pampasan sewajarnya.' }
+];
+
+/* ---------- FUNGSI BANTUAN ---------- */
+const $ = (sel, root = document) => root.querySelector(sel);
+const $$ = (sel, root = document) => [...root.querySelectorAll(sel)];
+const rupiah = n => 'Rp ' + Math.round(n).toLocaleString('ms-MY');
+const tgl = d => d.toLocaleDateString('ms-MY', { day: 'numeric', month: 'long', year: 'numeric' });
+const tambahHari = n => { const d = new Date(); d.setDate(d.getDate() + n); return d; };
+const waLink = text => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+
+function stokInfo(s) {
+  if (s <= 0) return { cls: 'out', txt: 'Habis · boleh pra-tempah' };
+  if (s <= 20) return { cls: 'warn', txt: `Terhad · baki ${s} unit` };
+  return { cls: 'ok', txt: `Sedia ada · stok ${s} unit` };
+}
+
+/* ---------- SUSUN ATUR (HEADER & FOOTER) ---------- */
+function renderLayout() {
+  const page = document.body.dataset.page;
+  const links = [
+    ['#/beranda', 'beranda', 'Laman Utama'],
+    ['#/produk', 'produk', 'Katalog Produk'],
+    ['#/kalkulator', 'kalkulator', 'Kira Kos & Penghantaran'],
+    ['#/faq', 'faq', 'Soalan Lazim'],
+    ['#/kontak', 'kontak', 'Hubungi Kami']
+  ];
+  const header = $('#site-header');
+  if (header) {
+    header.className = 'site-header';
+    header.innerHTML = `
+      <div class="container nav">
+        <a class="brand" href="#/beranda"><span class="brand-logo">🌿</span>${BUSINESS}</a>
+        <button class="menu-btn" id="menu-btn" aria-label="Buka menu navigasi">☰</button>
+        <ul class="nav-links" id="nav-links">
+          ${links.map(l => `<li><a href="${l[0]}" class="${l[1] === page ? 'active' : ''}">${l[2]}</a></li>`).join('')}
+        </ul>
+      </div>`;
+    $('#menu-btn').addEventListener('click', () => $('#nav-links').classList.toggle('open'));
+  }
+  const footer = $('#site-footer');
+  if (footer) {
+    footer.className = 'site-footer';
+    footer.innerHTML = `
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <h3>${BUSINESS}</h3>
+            <p>Pengeluar dan pengeksport kraf rotan asli dari Cirebon, Jawa Barat, Indonesia. Bersedia membekal kepada pembeli di Malaysia, Singapura dan peringkat global.</p>
+          </div>
+          <div>
+            <h3>Pautan Pantas</h3>
+            ${links.map(l => `<a href="${l[0]}">${l[2]}</a>`).join('')}
+          </div>
+          <div>
+            <h3>Hubungi Kami</h3>
+            <a href="${waLink('Salam sejahtera ' + BUSINESS + ', saya berminat untuk bertanyakan mengenai kraf rotan anda.')}" target="_blank" rel="noopener">WhatsApp Rasmi</a>
+            <p>Cirebon, Jawa Barat, Indonesia</p>
+            <p>Isnin – Sabtu, 08:00 – 17:00 (WIB)</p>
+          </div>
+        </div>
+        <div class="copy">© ${new Date().getFullYear()} ${BUSINESS}. Laman web tugasan PSAS Kelas X PPLG.</div>
+      </div>
+      <a class="wa-float" href="${waLink('Salam sejahtera ' + BUSINESS + ', saya berminat untuk bertanyakan mengenai kraf rotan anda.')}" target="_blank" rel="noopener">💬 Hubungi WhatsApp</a>`;
+  }
+}
+
+/* ---------- KATALOG PRODUK ---------- */
+function fotoFallback(img, id) {
+  const p = PRODUCTS.find(x => x.id === id);
+  const box = img.parentElement;
+  img.remove();
+  box.innerHTML = `<div class="img-fallback">${p ? p.emoji : '🪑'}</div>`;
+}
+
+function productCard(p) {
+  const v = p.varian[0];
+  const s = stokInfo(v.stok);
+  return `
+  <article class="card product" data-id="${p.id}" data-kat="${p.kategori}">
+    <div class="product-img"><img src="${p.id}.jpg" alt="${p.nama}" loading="lazy" onerror="fotoFallback(this,'${p.id}')"></div>
+    <div class="product-body">
+      <span class="product-cat">${p.kategori}</span>
+      <h3>${p.nama}</h3>
+      <p class="product-desc">${p.deskripsi}</p>
+      <div>
+        <label for="v-${p.id}">Pilihan varian:</label>
+        <select id="v-${p.id}" class="varian-select">
+          ${p.varian.map((x, i) => `<option value="${i}">${x.nama}</option>`).join('')}
+        </select>
+      </div>
+      <div class="price">${rupiah(v.harga)}<span class="meta"> / unit</span></div>
+      <div><span class="badge ${s.cls}">${s.txt}</span></div>
+      <div class="meta">Pesanan min. ${p.minOrder} unit · anggaran berat ±${v.berat} kg/unit</div>
+      <div class="spacer"></div>
+      <a class="btn btn-primary btn-sm btn-block" href="#/kalkulator?produk=${p.id}&varian=0">Kira Tempahan</a>
+    </div>
+  </article>`;
+}
+
+function updateCard(card) {
+  const p = PRODUCTS.find(x => x.id === card.dataset.id);
+  const i = +$('.varian-select', card).value;
+  const v = p.varian[i];
+  const s = stokInfo(v.stok);
+  $('.price', card).innerHTML = `${rupiah(v.harga)}<span class="meta"> / unit</span>`;
+  const b = $('.badge', card);
+  b.className = 'badge ' + s.cls;
+  b.textContent = s.txt;
+  $('.meta:last-of-type', card).textContent = `Pesanan min. ${p.minOrder} unit · anggaran berat ±${v.berat} kg/unit`;
+  $('.btn', card).href = `#/kalkulator?produk=${p.id}&varian=${i}`;
+}
+
+function initCatalog() {
+  const grid = $('#product-grid');
+  if (!grid) return;
+  const filters = $('#filters');
+  const search = $('#search');
+  const kats = ['Semua', ...new Set(PRODUCTS.map(p => p.kategori))];
+  let aktif = 'Semua';
+
+  filters.innerHTML = kats.map(k => `<button class="chip ${k === aktif ? 'active' : ''}" data-k="${k}">${k}</button>`).join('');
+
+  function draw() {
+    const q = search.value.trim().toLowerCase();
+    const list = PRODUCTS.filter(p =>
+      (aktif === 'Semua' || p.kategori === aktif) &&
+      (p.nama + ' ' + p.deskripsi + ' ' + p.varian.map(v => v.nama).join(' ')).toLowerCase().includes(q));
+    grid.innerHTML = list.length ? list.map(productCard).join('') : '<p class="empty">Barangan tidak ditemui. Sila cuba kata kunci carian yang lain.</p>';
+  }
+  filters.addEventListener('click', e => {
+    const btn = e.target.closest('.chip');
+    if (!btn) return;
+    aktif = btn.dataset.k;
+    $$('.chip', filters).forEach(c => c.classList.toggle('active', c === btn));
+    draw();
+  });
+  search.addEventListener('input', draw);
+  grid.addEventListener('change', e => { if (e.target.matches('.varian-select')) updateCard(e.target.closest('.product')); });
+  draw();
+}
+
+function initFeatured() {
+  const box = $('#featured');
+  if (!box) return;
+  box.innerHTML = PRODUCTS.slice(0, 3).map(productCard).join('');
+  box.addEventListener('change', e => { if (e.target.matches('.varian-select')) updateCard(e.target.closest('.product')); });
+}
+
+/* ---------- KALKULATOR TEMPAHAN ---------- */
+function initCalculator() {
+  const selProduk = $('#c-produk');
+  if (!selProduk) return;
+  const selVarian = $('#c-varian');
+  const inpQty = $('#c-qty');
+  const info = $('#c-info');
+  const addMsg = $('#add-msg');
+  const itemsBox = $('#items');
+  const selTujuan = $('#c-tujuan');
+  const selMetode = $('#c-metode');
+  const resultBox = $('#result');
+  let items = [];
+
+  selProduk.innerHTML = PRODUCTS.map(p => `<option value="${p.id}">${p.nama}</option>`).join('');
+
+  const groups = [...new Set(DESTINATIONS.map(d => d.grup))];
+  selTujuan.innerHTML = groups.map(g =>
+    `<optgroup label="${g}">${DESTINATIONS.filter(d => d.grup === g).map(d => `<option value="${d.id}">${d.nama}</option>`).join('')}</optgroup>`).join('');
+
+  const getP = () => PRODUCTS.find(p => p.id === selProduk.value);
+  const getD = () => DESTINATIONS.find(d => d.id === selTujuan.value);
+
+  function fillVarian() {
+    const p = getP();
+    selVarian.innerHTML = p.varian.map((v, i) => `<option value="${i}">${v.nama} — ${rupiah(v.harga)} (${stokInfo(v.stok).txt})</option>`).join('');
+    inpQty.value = p.minOrder;
+    inpQty.min = 1;
+    showInfo();
+  }
+  function showInfo() {
+    const p = getP(), v = p.varian[+selVarian.value];
+    info.textContent = `Pesanan min. ${p.minOrder} unit · anggaran berat ±${v.berat} kg/unit · ${stokInfo(v.stok).txt}`;
+  }
+  function fillMetode() {
+    const d = getD();
+    selMetode.innerHTML = d.metode.map((m, i) => `<option value="${i}">${m.nama} — ${rupiah(m.tarif)}/kg (${m.min}–${m.max} hari perjalanan)</option>`).join('');
+  }
+
+  function render() {
+    if (!items.length) {
+      itemsBox.innerHTML = '<p class="empty">Belum ada barangan dipilih. Sila pilih barangan di atas kemudian klik “+ Tambah ke Senarai Tempahan”.</p>';
+    } else {
+      itemsBox.innerHTML = `<table><thead><tr><th>Barangan</th><th>Kuantiti</th><th>Subjumlah</th><th></th></tr></thead><tbody>
+        ${items.map((it, idx) => {
+          const p = PRODUCTS.find(x => x.id === it.pid), v = p.varian[it.vi];
+          let st;
+          if (it.qty <= v.stok) st = '<span class="badge ok">Sedia Ada</span>';
+          else if (v.stok > 0) st = `<span class="badge warn">${v.stok} sedia ada, ${it.qty - v.stok} pembuatan</span>`;
+          else st = '<span class="badge out">Pra-tempah</span>';
+          const minWarn = it.qty < p.minOrder ? `<div class="msg-error">Pesanan min. ${p.minOrder} unit</div>` : '';
+          return `<tr>
+            <td><b>${p.nama}</b><br><span class="meta">${v.nama} · ${rupiah(v.harga)}</span><br>${st}${minWarn}</td>
+            <td><input type="number" min="1" value="${it.qty}" data-idx="${idx}" class="qty-edit" aria-label="Kuantiti"></td>
+            <td>${rupiah(v.harga * it.qty)}</td>
+            <td><button class="remove" data-idx="${idx}" title="Keluarkan barangan">✕</button></td></tr>`;
+        }).join('')}</tbody></table>`;
+    }
+    renderResult();
+  }
+
+  function renderResult() {
+    if (!items.length) {
+      resultBox.innerHTML = '<h3>Ringkasan Perbelanjaan</h3><p class="empty">Tambah barangan untuk melihat jumlah harga, kos penghantaran dan anggaran tarikh barangan sampai.</p>';
+      return;
+    }
+    const d = getD();
+    const m = d.metode[+selMetode.value] || d.metode[0];
+    let subtotal = 0, berat = 0, semuaSedia = true, adaBelumMin = false;
+    items.forEach(it => {
+      const p = PRODUCTS.find(x => x.id === it.pid), v = p.varian[it.vi];
+      subtotal += v.harga * it.qty;
+      berat += v.berat * it.qty;
+      if (it.qty > v.stok) semuaSedia = false;
+      if (it.qty < p.minOrder) adaBelumMin = true;
+    });
+    const beratHantar = Math.ceil(berat);
+    const ongkir = beratHantar * m.tarif;
+    const packing = d.ekspor ? Math.round(subtotal * PACKING_EKSPORT) : 0;
+    const total = subtotal + ongkir + packing;
+    const prep = semuaSedia ? SEDIA_HANTAR : PRODUKSI_TAMBAHAN;
+    const etaMin = prep.min + m.min, etaMax = prep.max + m.max;
+
+    const statusHtml = semuaSedia
+      ? `<div class="status-box ok"><strong>✅ Semua barangan stok sedia ada</strong>Sedia untuk dihantar dalam tempoh ${prep.min}–${prep.max} hari bekerja selepas bayaran disahkan.</div>`
+      : `<div class="status-box warn"><strong>⏳ Sebahagian barangan memerlukan pembuatan tambahan</strong>Tempoh pembuatan tambahan dianggarkan ${prep.min}–${prep.max} hari sebelum penghantaran dilakukan.</div>`;
+
+    resultBox.innerHTML = `
+      <h3>Ringkasan Perbelanjaan</h3>
+      ${statusHtml}
+      ${adaBelumMin ? '<div class="msg-error" style="margin-bottom:10px">Perhatian: Terdapat barangan yang belum memenuhi had pesanan minimum (MOQ).</div>' : ''}
+      <div class="result-row"><span>Subjumlah barangan</span><b>${rupiah(subtotal)}</b></div>
+      <div class="result-row"><span>Jumlah berat (dibundarkan)</span><b>${beratHantar} kg</b></div>
+      <div class="result-row"><span>Penghantaran ${d.nama} · ${m.nama}</span><b>${rupiah(ongkir)}</b></div>
+      ${d.ekspor ? `<div class="result-row"><span>Peti kayu eksport (5%)</span><b>${rupiah(packing)}</b></div>` : ''}
+      <div class="result-row total"><span>Anggaran Keseluruhan</span><span>${rupiah(total)}</span></div>
+      <div class="eta">
+        <small>Anggaran tarikh tiba di destinasi:</small>
+        <strong>${tgl(tambahHari(etaMin))} – ${tgl(tambahHari(etaMax))}</strong>
+        <small>(${etaMin}–${etaMax} hari dari hari ini, tidak termasuk urusan pelepasan kastam negara destinasi)</small>
+      </div>
+      <a class="btn btn-green btn-block" id="wa-order" target="_blank" rel="noopener" href="#">Hantar Pesanan Melalui WhatsApp</a>
+      <p class="hint">Harga ini adalah anggaran rasmi awal. Jumlah muktamad dan invois akan disahkan oleh pihak kami melalui WhatsApp.</p>`;
+
+    const lines = items.map(it => {
+      const p = PRODUCTS.find(x => x.id === it.pid), v = p.varian[it.vi];
+      return `- ${p.nama} (${v.nama}) x ${it.qty} = ${rupiah(v.harga * it.qty)}`;
+    }).join('\n');
+    const msg = `Salam sejahtera ${BUSINESS}, saya ingin membuat tempahan kraf rotan:\n${lines}\n\nDestinasi: ${d.nama} (${m.nama})\nSubjumlah barangan: ${rupiah(subtotal)}\nKos penghantaran: ${rupiah(ongkir)}${d.ekspor ? '\nPeti kayu eksport: ' + rupiah(packing) : ''}\nJumlah anggaran: ${rupiah(total)}\nAnggaran sampai: ${tgl(tambahHari(etaMin))} – ${tgl(tambahHari(etaMax))}\n\nMohon semakan dan pengesahan pihak tuan. Terima kasih.`;
+    $('#wa-order').href = waLink(msg);
+  }
+
+  // Pengendali acara
+  selProduk.addEventListener('change', fillVarian);
+  selVarian.addEventListener('change', showInfo);
+  selTujuan.addEventListener('change', () => { fillMetode(); renderResult(); });
+  selMetode.addEventListener('change', renderResult);
+
+  $('#btn-add').addEventListener('click', () => {
+    const p = getP(), vi = +selVarian.value, qty = parseInt(inpQty.value, 10);
+    addMsg.textContent = '';
+    if (!qty || qty < 1) { addMsg.textContent = 'Sila masukkan bilangan kuantiti yang sah.'; return; }
+    if (qty < p.minOrder) { addMsg.textContent = `Pesanan minimum bagi produk ini ialah ${p.minOrder} unit.`; return; }
+    const ada = items.find(i => i.pid === p.id && i.vi === vi);
+    if (ada) ada.qty += qty; else items.push({ pid: p.id, vi, qty });
+    render();
+  });
+  itemsBox.addEventListener('click', e => {
+    const btn = e.target.closest('.remove');
+    if (!btn) return;
+    items.splice(+btn.dataset.idx, 1);
+    render();
+  });
+  itemsBox.addEventListener('change', e => {
+    if (!e.target.matches('.qty-edit')) return;
+    const q = parseInt(e.target.value, 10);
+    items[+e.target.dataset.idx].qty = q > 0 ? q : 1;
+    render();
+  });
+
+  fillVarian();
+  fillMetode();
+
+  window.calcPreselect = () => {
+    const params = new URLSearchParams(location.hash.split('?')[1] || '');
+    if (params.get('produk') && PRODUCTS.some(p => p.id === params.get('produk'))) {
+      selProduk.value = params.get('produk');
+      fillVarian();
+      const vi = parseInt(params.get('varian'), 10);
+      if (!isNaN(vi) && getP().varian[vi]) { selVarian.value = vi; showInfo(); }
+    }
+    render();
+  };
+  window.calcPreselect();
+}
+
+/* ---------- SOALAN LAZIM (FAQ) ---------- */
+function initFaq() {
+  const list = $('#faq-list');
+  if (!list) return;
+  const search = $('#faq-search');
+  function draw() {
+    const q = search.value.trim().toLowerCase();
+    const data = FAQS.filter(f => (f.q + ' ' + f.a).toLowerCase().includes(q));
+    list.innerHTML = data.length
+      ? data.map(f => `<div class="faq-item"><button class="faq-q" aria-expanded="false">${f.q}</button><div class="faq-a"><p>${f.a}</p></div></div>`).join('')
+      : '<p class="empty">Soalan tidak ditemui. Sila tanyakan terus kepada kami melalui WhatsApp.</p>';
+  }
+  list.addEventListener('click', e => {
+    const btn = e.target.closest('.faq-q');
+    if (!btn) return;
+    const item = btn.parentElement, ans = $('.faq-a', item);
+    const open = item.classList.toggle('open');
+    btn.setAttribute('aria-expanded', open);
+    ans.style.maxHeight = open ? ans.scrollHeight + 'px' : '0';
+  });
+  search.addEventListener('input', draw);
+  draw();
+}
+
+/* ---------- BORANG HUBUNGI KAMI ---------- */
+function initContact() {
+  const form = $('#contact-form');
+  if (!form) return;
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const f = new FormData(form);
+    const msg = `Salam sejahtera ${BUSINESS},\n\nNama: ${f.get('nama')}\nSyarikat/Kedai: ${f.get('perusahaan') || '-'}\nBandar/Negara Destinasi: ${f.get('tujuan')}\n\nMesej Pertanyaan:\n${f.get('pesan')}`;
+    window.open(waLink(msg), '_blank');
+  });
+}
+
+/* ---------- PERMULAAN ---------- */
+document.addEventListener('DOMContentLoaded', () => {
+  renderLayout();
+  initFeatured();
+  initCatalog();
+  initCalculator();
+  initFaq();
+  initContact();
+  route();
+});
+
+/* ---------- PENGHALA HALAMAN (SPA) ---------- */
+const TITLES = {
+  beranda: 'Ridwan Rattan Craft — Pengeksport Kraf Rotan Cirebon',
+  produk: 'Katalog Produk — Ridwan Rattan Craft',
+  kalkulator: 'Kira Kos & Penghantaran — Ridwan Rattan Craft',
+  faq: 'Soalan Lazim (FAQ) — Ridwan Rattan Craft',
+  kontak: 'Hubungi Kami & Profil — Ridwan Rattan Craft'
+};
+function route() {
+  const h = (location.hash.replace(/^#\/?/, '').split('?')[0]) || 'beranda';
+  const page = TITLES[h] ? h : 'beranda';
+  $$('.page').forEach(s => { s.hidden = s.dataset.page !== page; });
+  document.body.dataset.page = page;
+  $$('#nav-links a').forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#/' + page));
+  $('#nav-links').classList.remove('open');
+  document.title = TITLES[page];
+  if (page === 'kalkulator' && window.calcPreselect) window.calcPreselect();
+  window.scrollTo(0, 0);
+}
+window.addEventListener('hashchange', route);
+  </script>
+</body>
+</html>

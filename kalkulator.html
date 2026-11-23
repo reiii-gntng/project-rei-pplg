@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Semak Harga & Penghantaran — Ridwan Rattan Craft</title>
+  <meta name="description" content="Kira jumlah harga, kos penghantaran dan anggaran tarikh tiba tempahan rotan anda.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="kalkulator">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <span class="eyebrow">Kalkulator Tempahan</span>
+        <h1>Semak Harga, Kos Penghantaran & Anggaran Tiba</h1>
+        <p>Susun tempahan, pilih destinasi penghantaran dan lihat jumlah kosnya secara terus.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container calc-layout">
+        <div>
+          <!-- 1. Tambah produk -->
+          <div class="card">
+            <h3>1. Pilih produk</h3>
+            <div class="form-row" style="margin-top:12px">
+              <label for="c-produk">Produk</label>
+              <select id="c-produk"></select>
+            </div>
+            <div class="form-row">
+              <label for="c-varian">Varian</label>
+              <select id="c-varian"></select>
+              <p class="hint" id="c-info"></p>
+            </div>
+            <div class="form-row">
+              <label for="c-qty">Kuantiti (pcs)</label>
+              <input type="number" id="c-qty" min="1" value="1">
+              <p class="msg-error" id="add-msg"></p>
+            </div>
+            <button class="btn btn-primary" id="btn-add" type="button">+ Tambah ke Tempahan</button>
+          </div>
+
+          <!-- 2. Senarai tempahan -->
+          <div class="card">
+            <h3>2. Senarai tempahan</h3>
+            <div id="items" style="margin-top:8px"></div>
+          </div>
+
+          <!-- 3. Destinasi -->
+          <div class="card">
+            <h3>3. Destinasi penghantaran</h3>
+            <div class="form-2" style="margin-top:12px">
+              <div class="form-row">
+                <label for="c-tujuan">Destinasi</label>
+                <select id="c-tujuan"></select>
+              </div>
+              <div class="form-row">
+                <label for="c-metode">Kaedah</label>
+                <select id="c-metode"></select>
+              </div>
+            </div>
+            <p class="hint">Kadar dikira per kg daripada jumlah berat tempahan. Penghantaran eksport menggunakan pembungkusan peti kayu (+5% daripada nilai barang).</p>
+          </div>
+        </div>
+
+        <!-- Keputusan -->
+        <aside class="card result" id="result"></aside>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="script.js"></script>
+</body>
+</html>

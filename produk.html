@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ms">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Produk — wowo Rattan Craft</title>
+  <meta name="description" content="Katalog produk rotan: perabot, hiasan dan aksesori meja lengkap dengan varian, harga dan status stok.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="produk">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="page-head">
+      <div class="container">
+        <span class="eyebrow">Katalog</span>
+        <h1>Produk Rotan</h1>
+        <p>Pilih varian untuk melihat harga dan status stok terkini. Klik “Kira Tempahan” untuk terus ke kalkulator.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="toolbar">
+          <div id="filters" style="display:flex;gap:8px;flex-wrap:wrap"></div>
+          <input type="text" id="search" class="search" placeholder="Cari produk, contohnya “kerusi” atau “bakul”…" aria-label="Cari produk">
+        </div>
+        <div class="grid grid-3" id="product-grid"></div>
+
+        <div class="card" style="margin-top:36px">
+          <h3>Keterangan status stok</h3>
+          <p style="margin-top:8px">
+            <span class="badge ok">Sedia ada</span> stok mencukupi, boleh dihantar dalam 1–2 hari bekerja. &nbsp;
+            <span class="badge warn">Terhad</span> stok hampir habis, segera buat tempahan. &nbsp;
+            <span class="badge out">Habis</span> boleh pra-tempah dengan pengeluaran 14–21 hari.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="script.js"></script>
+</body>
+</html>
